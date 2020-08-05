@@ -44,6 +44,8 @@ def run(animals_array)
     puts "Press 1 for a list of all pet names"
     puts "Press 2 for a list of all cats"
     puts "Press 3 to find an animal by name"
+    puts "Press 4 to find an animal by type"
+    puts "press 5 to find an animal by name and type"
     user_input = gets.chomp # removes whitespace and newline characters
     if user_input == "1"
         animals_array.map do |animal|
@@ -59,6 +61,23 @@ def run(animals_array)
         animals_array.find do |animal|
             animal[:name] == animal_name
         end
+        elsif user_input == "4"
+        puts "What type of animal are you looking for?"
+        animal_species = gets.chomp
+        animals_array.select do |animal|
+            animal[:species] == animal_species
+        end
+    elsif user_input == "5"
+        puts "What is the name of the animal you are looking for?"
+        animal_name = gets.chomp
+        puts "What type of animal are they?"
+        animal_species = gets.chomp
+        animals_array.map do |name, type|
+            if animal_name && animal_species == true
+            puts "We found #{animal_name}, #{animal_species}!"
+            #name[:name]+type[:species] == animal_array(name, type)
+            end
+        end
     end 
 end
 
@@ -67,6 +86,9 @@ binding.pry
 
 ### LEVEL UP 
 # 1. let the user input a type they want to search by
+
+
+
 # 2. let the user input a name and species to find an animal
 
 

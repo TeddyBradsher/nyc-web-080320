@@ -45,11 +45,6 @@ def animals_cli(animals_array)
 end
 
 
-
-
-
-
-
 def run 
     puts "Welcome, please sign up"
     puts "What is your name?"
